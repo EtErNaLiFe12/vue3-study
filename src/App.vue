@@ -5,10 +5,13 @@
     {{ msg }}
   </h1>
   <h1 v-html="msg"></h1> -->
+
+  <!--v-bind: 으로 데이터를 삽입 가능  -->
   <h1
-    :[attr]="'active'"
+    :[attr]="'active'" 
     @[event]="add">
-    <!--v-bind: 으로 데이터를 삽입 가능  -->
+    <!-- v-bind:class => :class or :[동적전달인자] 사용 가능  -->
+    <!-- v-on:click => @click or @[동적전달인자] 사용 가능 -->
     {{ msg }}
   </h1>
 </template>
