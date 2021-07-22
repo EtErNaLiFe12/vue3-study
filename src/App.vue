@@ -33,8 +33,8 @@ export default {
       msg: 'Hello Computed!'
     }
   },
-  computed: {
-    // GETTER - 값을 얻어내는 용도
+  computed: { // 계산된 데이터로써 캐싱기능이 있으므로 한번 연산된 데이터가 있으면 그뒤로 반복되는 데이터는 연산 안함(최적화)
+    // GETTER - 값을 얻어내는 용도 // 내용이 동작을 하는 것은 아님
     // reversedMessage() {
     //   return this.msg.split('').reverse().join('')
     // }
@@ -48,7 +48,7 @@ export default {
       }
     }
   },
-  // methods: {
+  // methods: { // 호출 할 때마다 메소드를 실행 해줘야함 - 연산이 계속 됨 
   //   reverseMessage() {
   //     return this.msg.split('').reverse().join('')
   //   }
@@ -67,11 +67,10 @@ export default {
  
 <template>
   <h1 @click="changeMessage"> 
-    <!-- v-on:click => @click -->
     {{ msg }}
   </h1>
   <h1>{{ reversedMessage }}</h1>
-  <!-- <h1>{{ changeMessage() }}</h1> -->
+  <!-- <h1>{{ changeMessage() }}</h1>  -->
 </template>
 
 <script>
@@ -100,6 +99,6 @@ export default {
     }
   }
 }
-</script>
+</script> 
 
 <!-- ---------------------------------------------- -->
